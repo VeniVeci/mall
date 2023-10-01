@@ -17,6 +17,7 @@
     <result column="brand_story" jdbcType="LONGVARCHAR" property="brandStory" />
   </resultMap>
   <sql id="Example_Where_Clause">
+-- # Where 从句;分句
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
         <if test="criteria.valid">
@@ -75,7 +76,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, first_letter, sort, factory_status, show_status, product_count, product_comment_count, 
+--  字段的名字  提高复用性
+    id, name, first_letter, sort, factory_status, show_status, product_count, product_comment_count,
     logo, big_pic
   </sql>
   <sql id="Blob_Column_List">
@@ -112,7 +114,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
-    select 
+    select
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -133,13 +135,13 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into pms_brand (name, first_letter, sort, 
-      factory_status, show_status, product_count, 
-      product_comment_count, logo, big_pic, 
+    insert into pms_brand (name, first_letter, sort,
+      factory_status, show_status, product_count,
+      product_comment_count, logo, big_pic,
       brand_story)
-    values (#{name,jdbcType=VARCHAR}, #{firstLetter,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
-      #{factoryStatus,jdbcType=INTEGER}, #{showStatus,jdbcType=INTEGER}, #{productCount,jdbcType=INTEGER}, 
-      #{productCommentCount,jdbcType=INTEGER}, #{logo,jdbcType=VARCHAR}, #{bigPic,jdbcType=VARCHAR}, 
+    values (#{name,jdbcType=VARCHAR}, #{firstLetter,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER},
+      #{factoryStatus,jdbcType=INTEGER}, #{showStatus,jdbcType=INTEGER}, #{productCount,jdbcType=INTEGER},
+      #{productCommentCount,jdbcType=INTEGER}, #{logo,jdbcType=VARCHAR}, #{bigPic,jdbcType=VARCHAR},
       #{brandStory,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.macro.mall.model.PmsBrand">
