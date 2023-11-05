@@ -27,6 +27,7 @@ import java.util.Map;
  */
 public class JwtTokenUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtTokenUtil.class);
+    //
     private static final String CLAIM_KEY_USERNAME = "sub";
     private static final String CLAIM_KEY_CREATED = "created";
     @Value("${jwt.secret}")
@@ -86,7 +87,7 @@ public class JwtTokenUtil {
 
     /**
      * 验证token是否还有效
-     *
+     * 如果两个信息一致 就说明 用户没有问题？？？
      * @param token       客户端传入的token
      * @param userDetails 从数据库中查询出来的用户信息
      */
