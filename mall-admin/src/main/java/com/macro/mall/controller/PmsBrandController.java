@@ -39,6 +39,7 @@ public class PmsBrandController {
     @ResponseBody
     public CommonResult create(@Validated @RequestBody PmsBrandParam pmsBrand) {
         CommonResult commonResult;
+        // 根据返回值 判断是否创建成功
         int count = brandService.createBrand(pmsBrand);
         if (count == 1) {
             commonResult = CommonResult.success(count);
