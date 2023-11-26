@@ -301,7 +301,7 @@ public class PmsProductServiceImpl implements PmsProductService {
     }
 
     /**
-     * 建立和插入关系表操作
+     * 建立和插入关系表操作 批量操作
      *
      * @param dao       可以操作的dao
      * @param dataList  要插入的数据
