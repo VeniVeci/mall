@@ -15,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 商品管理Controller
@@ -27,16 +29,34 @@ import java.util.List;
 public class PmsProductController {
     @Autowired
     private PmsProductService productService;
+    // 存储已经处理过的请求标识符
+    private static final Map<PmsProductParam, Boolean> processedRequests = new ConcurrentHashMap<>();
 
+    // ...
+
+    private boolean isRequestProcessed(PmsProductParam productParam) {
+        return processedRequests.containsKey(productParam);
+    }
+
+    private void markRequestAsProcessed(PmsProductParam productParam) {
+        processedRequests.put(productParam, true);
+    }
     @ApiOperation("创建商品")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody PmsProductParam productParam) {
-        int count = productService.create(productParam);
-        if (count > 0) {
-            return CommonResult.success(count);
-        } else {
-            return CommonResult.failed();
+        // 创建商品时 先判断是不是已经有一样的请求了  如果有那么就不执行
+        // 如果没有 执行create 函数 同时将请求加入map
+        if(isRequestProcessed(productParam)){
+            return CommonResult.duplicate();
+        }else{
+            markRequestAsProcessed(productParam);
+            int count = productService.create(productParam);
+            if (count > 0) {
+                return CommonResult.success(count);
+            } else {
+                return CommonResult.failed();
+            }
         }
     }
 

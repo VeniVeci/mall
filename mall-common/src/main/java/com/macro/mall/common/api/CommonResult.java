@@ -106,7 +106,12 @@ public class CommonResult<T> {
     public static <T> CommonResult<T> forbidden(T data) {
         return new CommonResult<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
     }
-
+    /**
+     * 请求重复
+     */
+    public static <T> CommonResult<T> duplicate() {
+        return new CommonResult<T>(ResultCode.DUPLICATE.getCode(), ResultCode.FORBIDDEN.getMessage(), null);
+    }
     public long getCode() {
         return code;
     }

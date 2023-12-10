@@ -36,7 +36,7 @@
 
 前端项目`mall-admin-web`地址：https://github.com/macrozheng/mall-admin-web
 
-项目演示地址： [https://www.macrozheng.com/admin/index.html](https://www.macrozheng.com/admin/index.html)  
+项目演示地址： [https://www.macrozheng.com/admin/index.html](https://www.macrozheng.com/admin/index.html)
 
 ![后台管理系统功能演示](http://img.macrozheng.com/mall/project/mall_admin_show.png)
 
@@ -50,7 +50,7 @@
 
 ### 组织结构
 
-``` lua
+```lua
 mall
 ├── mall-common -- 工具类及通用代码
 ├── mall-mbg -- MyBatisGenerator生成的数据库操作代码
@@ -65,15 +65,16 @@ mall
 
 #### 后端技术
 
+
 | 技术                 | 说明                | 官网                                           |
-| -------------------- | ------------------- | ---------------------------------------------- |
-| SpringBoot           | Web应用开发框架      | https://spring.io/projects/spring-boot         |
+| ---------------------- | --------------------- | ------------------------------------------------ |
+| SpringBoot           | Web应用开发框架     | https://spring.io/projects/spring-boot         |
 | SpringSecurity       | 认证和授权框架      | https://spring.io/projects/spring-security     |
 | MyBatis              | ORM框架             | http://www.mybatis.org/mybatis-3/zh/index.html |
-| MyBatisGenerator     | 数据层代码生成器     | http://www.mybatis.org/generator/index.html    |
+| MyBatisGenerator     | 数据层代码生成器    | http://www.mybatis.org/generator/index.html    |
 | Elasticsearch        | 搜索引擎            | https://github.com/elastic/elasticsearch       |
 | RabbitMQ             | 消息队列            | https://www.rabbitmq.com/                      |
-| Redis                | 内存数据存储         | https://redis.io/                              |
+| Redis                | 内存数据存储        | https://redis.io/                              |
 | MongoDB              | NoSql数据库         | https://www.mongodb.com                        |
 | LogStash             | 日志收集工具        | https://github.com/elastic/logstash            |
 | Kibana               | 日志可视化查看工具  | https://github.com/elastic/kibana              |
@@ -87,13 +88,14 @@ mall
 | Lombok               | Java语言增强库      | https://github.com/rzwitserloot/lombok         |
 | Hutool               | Java工具类库        | https://github.com/looly/hutool                |
 | PageHelper           | MyBatis物理分页插件 | http://git.oschina.net/free/Mybatis_PageHelper |
-| Swagger-UI           | API文档生成工具      | https://github.com/swagger-api/swagger-ui      |
+| Swagger-UI           | API文档生成工具     | https://github.com/swagger-api/swagger-ui      |
 | Hibernator-Validator | 验证框架            | http://hibernate.org/validator                 |
 
 #### 前端技术
 
+
 | 技术       | 说明                  | 官网                                   |
-| ---------- | --------------------- | -------------------------------------- |
+| ------------ | ----------------------- | ---------------------------------------- |
 | Vue        | 前端框架              | https://vuejs.org/                     |
 | Vue-router | 路由框架              | https://router.vuejs.org/              |
 | Vuex       | 全局状态管理框架      | https://vuex.vuejs.org/                |
@@ -105,8 +107,9 @@ mall
 
 #### 移动端技术
 
+
 | 技术         | 说明             | 官网                                    |
-| ------------ | ---------------- | --------------------------------------- |
+| -------------- | ------------------ | ----------------------------------------- |
 | Vue          | 核心前端框架     | https://vuejs.org                       |
 | Vuex         | 全局状态管理框架 | https://vuex.vuejs.org                  |
 | uni-app      | 移动端前端框架   | https://uniapp.dcloud.io                |
@@ -145,37 +148,39 @@ mall
 
 ### 开发工具
 
-| 工具          | 说明                | 官网                                            |
-| ------------- | ------------------- | ----------------------------------------------- |
-| IDEA          | 开发IDE             | https://www.jetbrains.com/idea/download         |
-| RedisDesktop  | redis客户端连接工具 | https://github.com/qishibo/AnotherRedisDesktopManager  |
-| Robomongo     | mongo客户端连接工具 | https://robomongo.org/download                  |
-| SwitchHosts   | 本地host管理        | https://oldj.github.io/SwitchHosts/             |
-| X-shell       | Linux远程连接工具   | http://www.netsarang.com/download/software.html |
-| Navicat       | 数据库连接工具      | http://www.formysql.com/xiazai.html             |
-| PowerDesigner | 数据库设计工具      | http://powerdesigner.de/                        |
-| Axure         | 原型设计工具        | https://www.axure.com/                          |
-| MindMaster    | 思维导图设计工具    | http://www.edrawsoft.cn/mindmaster              |
-| ScreenToGif   | gif录制工具         | https://www.screentogif.com/                    |
-| ProcessOn     | 流程图绘制工具      | https://www.processon.com/                      |
-| PicPick       | 图片处理工具        | https://picpick.app/zh/                         |
-| Snipaste      | 屏幕截图工具        | https://www.snipaste.com/                       |
-| Postman       | API接口调试工具      | https://www.postman.com/                        |
-| Typora        | Markdown编辑器      | https://typora.io/                              |
+
+| 工具          | 说明                | 官网                                                  |
+| --------------- | --------------------- | ------------------------------------------------------- |
+| IDEA          | 开发IDE             | https://www.jetbrains.com/idea/download               |
+| RedisDesktop  | redis客户端连接工具 | https://github.com/qishibo/AnotherRedisDesktopManager |
+| Robomongo     | mongo客户端连接工具 | https://robomongo.org/download                        |
+| SwitchHosts   | 本地host管理        | https://oldj.github.io/SwitchHosts/                   |
+| X-shell       | Linux远程连接工具   | http://www.netsarang.com/download/software.html       |
+| Navicat       | 数据库连接工具      | http://www.formysql.com/xiazai.html                   |
+| PowerDesigner | 数据库设计工具      | http://powerdesigner.de/                              |
+| Axure         | 原型设计工具        | https://www.axure.com/                                |
+| MindMaster    | 思维导图设计工具    | http://www.edrawsoft.cn/mindmaster                    |
+| ScreenToGif   | gif录制工具         | https://www.screentogif.com/                          |
+| ProcessOn     | 流程图绘制工具      | https://www.processon.com/                            |
+| PicPick       | 图片处理工具        | https://picpick.app/zh/                               |
+| Snipaste      | 屏幕截图工具        | https://www.snipaste.com/                             |
+| Postman       | API接口调试工具     | https://www.postman.com/                              |
+| Typora        | Markdown编辑器      | https://typora.io/                                    |
 
 ### 开发环境
 
-| 工具          | 版本号 | 下载                                                         |
-| ------------- | ------ | ------------------------------------------------------------ |
+
+| 工具          | 版本号 | 下载                                                                                 |
+| --------------- | -------- | -------------------------------------------------------------------------------------- |
 | JDK           | 1.8    | https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html |
-| MySQL         | 5.7    | https://www.mysql.com/                                       |
-| Redis         | 7.0    | https://redis.io/download                                    |
-| MongoDB       | 5.0    | https://www.mongodb.com/download-center                      |
-| RabbitMQ      | 3.10.5 | http://www.rabbitmq.com/download.html                        |
-| Nginx         | 1.22   | http://nginx.org/en/download.html                            |
-| Elasticsearch | 7.17.3 | https://www.elastic.co/downloads/elasticsearch               |
-| Logstash      | 7.17.3 | https://www.elastic.co/cn/downloads/logstash                 |
-| Kibana        | 7.17.3 | https://www.elastic.co/cn/downloads/kibana                   |
+| MySQL         | 5.7    | https://www.mysql.com/                                                               |
+| Redis         | 7.0    | https://redis.io/download                                                            |
+| MongoDB       | 5.0    | https://www.mongodb.com/download-center                                              |
+| RabbitMQ      | 3.10.5 | http://www.rabbitmq.com/download.html                                                |
+| Nginx         | 1.22   | http://nginx.org/en/download.html                                                    |
+| Elasticsearch | 7.17.3 | https://www.elastic.co/downloads/elasticsearch                                       |
+| Logstash      | 7.17.3 | https://www.elastic.co/cn/downloads/logstash                                         |
+| Kibana        | 7.17.3 | https://www.elastic.co/cn/downloads/kibana                                           |
 
 ### 搭建步骤
 
