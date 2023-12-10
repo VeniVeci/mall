@@ -7,9 +7,12 @@ import com.macro.mall.dto.PmsProductQueryParam;
 import com.macro.mall.dto.PmsProductResult;
 import com.macro.mall.model.PmsProduct;
 import com.macro.mall.service.PmsProductService;
+import com.macro.mall.utils.JsonConverter;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -30,16 +33,16 @@ public class PmsProductController {
     @Autowired
     private PmsProductService productService;
     // 存储已经处理过的请求标识符
-    private static final Map<PmsProductParam, Boolean> processedRequests = new ConcurrentHashMap<>();
-
+    private static final Map<String, Boolean> processedRequests = new ConcurrentHashMap<>();
+    private static final Logger LOGGER = LoggerFactory.getLogger(PmsProductController.class);
     // ...
 
-    private boolean isRequestProcessed(PmsProductParam productParam) {
-        return processedRequests.containsKey(productParam);
+    private boolean isRequestProcessed(String productParamStr) {
+        return processedRequests.containsKey(productParamStr);
     }
 
-    private void markRequestAsProcessed(PmsProductParam productParam) {
-        processedRequests.put(productParam, true);
+    private void markRequestAsProcessed(String productParamStr) {
+        processedRequests.put(productParamStr, true);
     }
     @ApiOperation("创建商品")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
@@ -47,10 +50,16 @@ public class PmsProductController {
     public CommonResult create(@RequestBody PmsProductParam productParam) {
         // 创建商品时 先判断是不是已经有一样的请求了  如果有那么就不执行
         // 如果没有 执行create 函数 同时将请求加入map
-        if(isRequestProcessed(productParam)){
+        if(isRequestProcessed(JsonConverter.convertToJsonString(productParam))){
+//            System.out.println(productParam);
+//            System.out.println(productParam);
+            LOGGER.info("请求重复：{}", productParam);
             return CommonResult.duplicate();
         }else{
-            markRequestAsProcessed(productParam);
+            markRequestAsProcessed(JsonConverter.convertToJsonString(productParam));
+//            LOGGER.info("已添加{}", productParam);
+            LOGGER.info("已添加{}", processedRequests);
+
             int count = productService.create(productParam);
             if (count > 0) {
                 return CommonResult.success(count);

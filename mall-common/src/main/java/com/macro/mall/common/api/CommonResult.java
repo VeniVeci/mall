@@ -110,7 +110,7 @@ public class CommonResult<T> {
      * 请求重复
      */
     public static <T> CommonResult<T> duplicate() {
-        return new CommonResult<T>(ResultCode.DUPLICATE.getCode(), ResultCode.FORBIDDEN.getMessage(), null);
+        return new CommonResult<T>(ResultCode.DUPLICATE.getCode(), ResultCode.DUPLICATE.getMessage(), null);
     }
     public long getCode() {
         return code;

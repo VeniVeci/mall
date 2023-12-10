@@ -37,9 +37,9 @@
         <pagehelper.version>5.3.2</pagehelper.version>
         <druid.version>1.2.14</druid.version>
         <hutool.version>5.8.9</hutool.version>
-<!--        <springfox-swagger.version>3.0.0</springfox-swagger.version>-->
-<!--        <swagger-models.version>1.6.0</swagger-models.version>-->
-<!--        <swagger-annotations.version>1.6.0</swagger-annotations.version>-->
+        <springfox-swagger.version>3.0.0</springfox-swagger.version>
+        <swagger-models.version>1.6.0</swagger-models.version>
+        <swagger-annotations.version>1.6.0</swagger-annotations.version>
         <mybatis-generator.version>1.4.1</mybatis-generator.version>
         <mybatis.version>3.5.10</mybatis.version>
         <mysql-connector.version>8.0.29</mysql-connector.version>
@@ -133,33 +133,33 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>2.7.0</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>2.7.0</version>
-            </dependency>
-            <!--Swagger-UI API文档生产工具-->
 <!--            <dependency>-->
 <!--                <groupId>io.springfox</groupId>-->
-<!--                <artifactId>springfox-boot-starter</artifactId>-->
-<!--                <version>${springfox-swagger.version}</version>-->
-<!--            </dependency>-->
-<!--            &lt;!&ndash;解决Swagger访问主页时的NumberFormatException问题&ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>io.swagger</groupId>-->
-<!--                <artifactId>swagger-models</artifactId>-->
-<!--                <version>${swagger-models.version}</version>-->
+<!--                <artifactId>springfox-swagger2</artifactId>-->
+<!--                <version>2.7.0</version>-->
 <!--            </dependency>-->
 <!--            <dependency>-->
-<!--                <groupId>io.swagger</groupId>-->
-<!--                <artifactId>swagger-annotations</artifactId>-->
-<!--                <version>${swagger-annotations.version}</version>-->
+<!--                <groupId>io.springfox</groupId>-->
+<!--                <artifactId>springfox-swagger-ui</artifactId>-->
+<!--                <version>2.7.0</version>-->
 <!--            </dependency>-->
+            <!--Swagger-UI API文档生产工具-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox-swagger.version}</version>
+            </dependency>
+            <!--解决Swagger访问主页时的NumberFormatException问题-->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>${swagger-models.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations.version}</version>
+            </dependency>
             <!-- MyBatis 生成器 -->
             <dependency>
                 <groupId>org.mybatis.generator</groupId>
